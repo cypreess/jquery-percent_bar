@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="jquery.percent_bar.js"></script>
+</head>
+<body>
+
+<h1>jquery-percent_bar example</h1>
+
+<a href="https://github.com/cypreess/jquery-percent_bar">https://github.com/cypreess/jquery-percent_bar</a>
+
+<h2>Simple bar</h2>
+
+<script>
+    $(function(){
+        $('.bar1').percent_bar();
+    });
+</script>
+
+<pre>
+$('.bar1').percent_bar();
+</pre>
+
+<span class="bar1" value="56" max="78"></span> 56 / 78
+
+<h2>Color customization</h2>
+
+<script>
+    $(function(){
+        $('.bar2').percent_bar({
+            value_color: 'blue',
+            font_color: 'yellow',
+            background_color: '#AAF'
+
+        });
+    });
+</script>
+
+<pre>
+$('.bar2').percent_bar({
+    value_color: 'blue',
+    font_color: 'yellow',
+    background_color: '#AAF'
+});
+</pre>
+
+<span class="bar2" value="13" max="55"></span> 13 / 55
+
+
+<h2>Label customization</h2>
+
+<script>
+    $(function(){
+        $('.bar3').percent_bar({
+            show_label: false
+        });
+    });
+</script>
+
+<pre>
+$('.bar3').percent_bar({
+    show_label: false
+});
+</pre>
+
+<span class="bar3" value="62" max="95"></span> 62 / 95
+
+<script>
+    $(function(){
+        $('.bar4').percent_bar({
+            show_label: true,
+            label_position: 'right'
+        });
+    });
+</script>
+
+<pre>
+$('.bar4').percent_bar({
+    show_label: true,
+    label_position: 'right'
+});
+</pre>
+
+<span class="bar4" value="62" max="95"></span> 62 / 95
+
+
+<script>
+    $(function(){
+        $('.bar5').percent_bar({
+            show_label: true,
+            label_position: 'left'
+        });
+    });
+</script>
+
+<pre>
+$('.bar5').percent_bar({
+    show_label: true,
+    label_position: 'left'
+});
+</pre>
+
+<span class="bar5" value="62" max="95"></span> 62 / 95
+
+
+<script>
+    $(function(){
+        $('.bar6').percent_bar({
+            show_label: true,
+            label_position: 'auto'
+        });
+    });
+</script>
+
+<pre>
+$('.bar6').percent_bar({
+    show_label: true,
+    label_position: 'auto'
+});
+</pre>
+
+<span class="bar6" value="62" max="95"></span> 62 / 95
+
+<script>
+    $(function(){
+        $('.bar7').percent_bar({
+            show_label: true,
+            label_position: 'auto-inside'
+        });
+    });
+</script>
+
+<pre>
+$('.bar7').percent_bar({
+    show_label: true,
+    label_position: 'auto-inside'
+});
+</pre>
+
+<span class="bar7" value="62" max="95"></span> 62 / 95
+
+
+
+<h2>Size customization</h2>
+
+<script>
+    $(function(){
+        $('.bar8').percent_bar({
+            width: '150px',
+            height: '50px'
+        });
+    });
+</script>
+
+<pre>
+$('.bar8').percent_bar({
+    width: '150px',
+    height: '50px'
+});
+</pre>
+
+<span class="bar8" value="22" max="95"></span> 22 / 95
+
+
+<script>
+    $(function(){
+        $('.bar9').percent_bar({
+            width: '650px',
+            height: '15px'
+        });
+    });
+</script>
+
+<pre>
+$('.bar9').percent_bar({
+    width: '650px',
+    height: '15px'
+});
+</pre>
+
+<span class="bar9" value="22" max="95"></span> 22 / 95
+
+
+</body>
+</html>    
