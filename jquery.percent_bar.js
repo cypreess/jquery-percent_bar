@@ -45,6 +45,7 @@
             max = parseInt(obj.attr('max'));
             percentage = value / max;
 
+            value_width = Math.min(parseInt(options.width), Math.round(parseInt(options.width) * percentage));
 
             obj.append('<span class="value"></span>');
             value_span = $('.value', obj);
@@ -54,7 +55,7 @@
             value_span.css('left', '0');
             value_span.css('height', options.height);
             value_span.css('background-color', options.value_color);
-            value_span.css('width', Math.round(parseInt(options.width) * percentage) + 'px');
+            value_span.css('width', value_width + 'px');
             value_span.css('display', 'inline-block');
             value_span.css('margin', '0');
             value_span.css('padding', '0');
@@ -73,18 +74,19 @@
                 label_span.css('padding-right', '0');
                 label_span.css('position', 'absolute');
                 if (options.label_position == 'auto') {
-                    label_offset = percentage * parseInt(options.width) + 5;
+                    label_offset = value_width + 5;
                     if ( label_offset + label_span.width() > parseInt(options.width)) {
-                        label_span.css('right', '5');
+                        label_span.css('right', 5);
+
                     } else {
-                        label_span.css('left', Math.round(label_offset) );
+                        label_span.css('left', label_offset);
                     }
                 } else if (options.label_position == 'auto-inside') {
-                    label_offset = percentage * parseInt(options.width) - label_span.width() - 5;
+                    label_offset = value_width - label_span.width() - 5;
                     if ( label_offset < 0 ) {
                         label_span.css('left', '5');
                     } else {
-                        label_span.css('left', Math.round(label_offset));
+                        label_span.css('left', label_offset);
                     }
                 } else if (options.label_position == 'right') {
                     label_span.css('right', '0');
