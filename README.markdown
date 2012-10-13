@@ -30,7 +30,8 @@ This will turn all .bar class elements into nice html bars:
 
 ## Options
 
- 
+* value: default NaN - gauge value given rather in the attribute,
+* max: default NaN - gauge max value given rather in the attribute,
 * value_color: default 'green' - set color of gauge,
 * background_color: default 'gray' - set background color,
 * font_size: default '11px' - size of label text,
