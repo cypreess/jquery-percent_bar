@@ -23,7 +23,48 @@
 $('.bar1').percent_bar();
 </pre>
 
-<span class="bar1" value="56" max="78"></span> 56 / 78
+<span class="bar1" value="44" max="55"></span> 44 / 55
+
+
+<h2>Animated bar</h2>
+
+<script>
+    $(function(){
+        
+        a = 0;
+        dir = 2;
+        
+        function change_values(){
+            
+            if (a >= 100) dir = -2;
+            if (a <= 0) dir = 2;
+            a += dir; 
+            $('.bar-animated').percent_bar({
+                value: a,
+                max: 100
+            });
+            
+            
+        
+        };
+        
+        window.setInterval(function(){
+                   change_values();
+            }, 100);
+        
+
+    });
+</script>
+
+<pre>
+$('.bar-animated').percent_bar({
+    value: a,
+    max: 100
+});
+</pre>
+
+
+<span class="bar-animated"></span> 
 
 <h2>Color customization</h2>
 

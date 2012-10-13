@@ -18,6 +18,8 @@
 
         // default configuration properties
         var defaults = {
+            value:                  NaN,
+            max:                    NaN, 
             value_color:            'green',
             background_color:       'gray',
             font_size:              '11px',
@@ -33,6 +35,7 @@
 
         return this.each(function() {
             var obj = $(this);
+            obj.empty();
             obj.css('width', options.width);
             obj.css('height', options.height);
             obj.css('display', 'inline-block');
@@ -41,8 +44,8 @@
             obj.css('padding', '0');
             obj.css('vertical-align', 'middle');
 
-            value = parseInt(obj.attr('value'));
-            max = parseInt(obj.attr('max'));
+            value = (isNaN(options.value))? parseInt(obj.attr('value')): parseInt(options.value);
+            max = (isNaN(options.max))? parseInt(obj.attr('max')): parseInt(options.max);
             percentage = value / max;
 
             value_width = Math.min(parseInt(options.width), Math.round(parseInt(options.width) * percentage));
